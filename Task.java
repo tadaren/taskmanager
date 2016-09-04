@@ -43,4 +43,24 @@ public class Task {
 	public int getSubmissionDate(){
 		return Submission_Date;
 	}
+
+	public String getSubject(){
+		return subject;
+	}
+
+	public String getContent(){
+		return content;
+	}
+
+	public boolean getEnd(){
+		return End;
+	}
+
+	public String StringEnd(){
+		if(End){
+			return "完了";
+		}else{
+			return "未完了";
+		}
+	}
 }

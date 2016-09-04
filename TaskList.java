@@ -12,9 +12,13 @@ import java.util.Comparator;
 
 import net.arnx.jsonic.JSON;;
 
-public class jsonManagement {
+public class TaskList {
 	//	private int taskcount;//タスクの数を保存しておく
 	public ArrayList<Task> TaskList = new ArrayList<Task>();
+
+	public TaskList(){
+		decode();
+	}
 
 	public void FileManage(){
 
@@ -34,7 +38,7 @@ public class jsonManagement {
 		}
 	}
 
-	private String jsonEncode(Task task){
+	public String jsonEncode(Task task){
 		String Taskjson = JSON.encode(task);
 		return Taskjson;
 	}
@@ -47,6 +51,8 @@ public class jsonManagement {
 			String str = br.readLine();//1行目の読み込み
 			while(str != null){
 				TaskList.add(JSON.decode(str, Task.class));
+//				TaskList.add(JSON.decode(str));
+
 			}
 		}catch(FileNotFoundException e){
 			e.printStackTrace();
@@ -57,9 +63,9 @@ public class jsonManagement {
 
 	public static File lookfile(){
 		File file = new File(".\\Task.json"); //ファイルクラスの作成
-		if(!(file.exists())){ //ディレクトリが存在するかを確認する
+		if(!(file.exists())){ //ファイルが存在するかを確認する
 			try {
-				file.createNewFile(); //存在しなければディレクトリを作成
+				file.createNewFile(); //存在しなければファイルを作成
 			} catch (IOException e) { //エラー処理
 				e.printStackTrace();
 			}
