@@ -50,7 +50,9 @@ public class TaskList {
 			BufferedReader br = new BufferedReader(new FileReader(file));//ファイル読み込みのクラスの作成
 			String str = br.readLine();//1行目の読み込み
 			while(str != null){
-				TaskList.add(JSON.decode(str, Task.class));
+				System.out.println(str);
+				Task task = JSON.decode(str, Task.class);
+				TaskList.add(task);
 //				TaskList.add(JSON.decode(str));
 
 			}
