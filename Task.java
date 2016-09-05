@@ -32,24 +32,48 @@ public class Task {
 		End = false;
 	}
 
+	public void setRegistrationDate(int regist){
+		Registration_Date = regist;
+	}
+
 	public int getRegistrationDate(){
 		return Registration_Date;
+	}
+	
+	public void setQuestionDate(int question){
+		Quuestion_Date = question;
 	}
 
 	public int getQuestionDate(){
 		return Questions_Date;
+	}
+	
+	public void setSubmissionDate(int sub){
+		Submission_Date = sub;
 	}
 
 	public int getSubmissionDate(){
 		return Submission_Date;
 	}
 
+	public void setSubject(String subj){
+		subject = subj;
+	}
+
 	public String getSubject(){
 		return subject;
 	}
 
+	public String setContent(String con){
+		content = con;	
+	}
+
 	public String getContent(){
 		return content;
+	}
+	
+	public void setEnd(boolean end){
+		End = end;
 	}
 
 	public boolean getEnd(){
