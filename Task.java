@@ -2,15 +2,17 @@ package taskmanager;
 
 import java.util.Calendar;
 
-public class Task {
-	private int Registration_Date;
-	private int Questions_Date;
-	private int Submission_Date;
+import com.sun.imageio.plugins.common.SubImageInputStream;
+
+class Task {
+	private int registrationDate;
+	private int questionsDate;
+	private int submissionDate;
 	private String subject;
 	private String content;
-	private boolean End;
+	private boolean end;
 
-	public Task(int QDate, int SDate, String sub, String con){
+	public void AllSet(int QDate, int SDate, String sub, String con){
 		Calendar calendar = Calendar.getInstance();
 		StringBuilder RDate1 = new StringBuilder();
 		RDate1.append(""+calendar.get(Calendar.YEAR));
@@ -24,40 +26,64 @@ public class Task {
 		}else{
 			RDate1.append(calendar.get(Calendar.DATE));
 		}
-		Registration_Date = Integer.parseInt(RDate1.toString());
-		Questions_Date = QDate;
-		Submission_Date = SDate;
+		registrationDate = Integer.parseInt(RDate1.toString());
+		questionsDate = QDate;
+		submissionDate = SDate;
 		subject = sub;
 		content = con;
-		End = false;
+		end = false;
 	}
 
 	public int getRegistrationDate(){
-		return Registration_Date;
+		return registrationDate;
+	}
+
+	public void setRegistrationDate(final int registrationDate){
+		this.registrationDate = registrationDate;
 	}
 
 	public int getQuestionDate(){
-		return Questions_Date;
+		return questionsDate;
+	}
+
+	public void setQuestionDate(int questionsDate){
+		this.questionsDate = questionsDate;
 	}
 
 	public int getSubmissionDate(){
-		return Submission_Date;
+		return submissionDate;
+	}
+
+	public void setSubmissionDate(int submissionDate){
+		this.submissionDate = submissionDate;
 	}
 
 	public String getSubject(){
 		return subject;
 	}
 
+	public void setSubject(String subject){
+		this.subject = subject;
+	}
+
 	public String getContent(){
 		return content;
 	}
 
+	public void setContent(String content){
+		this.content = content;
+	}
+
 	public boolean getEnd(){
-		return End;
+		return end;
+	}
+
+	public void setEnd(boolean end){
+		this.end = end;
 	}
 
 	public String StringEnd(){
-		if(End){
+		if(end){
 			return "完了";
 		}else{
 			return "未完了";
