@@ -54,6 +54,7 @@ public class TaskList {
 				Task task = JSON.decode(str, Task.class);
 				TaskList.add(task);
 //				TaskList.add(JSON.decode(str));
+				str = br.readLine();
 
 			}
 		}catch(FileNotFoundException e){

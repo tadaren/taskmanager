@@ -4,7 +4,7 @@ import java.util.Calendar;
 
 import com.sun.imageio.plugins.common.SubImageInputStream;
 
-public class Task {
+class Task {
 	private int registrationDate;
 	private int questionsDate;
 	private int submissionDate;
@@ -12,7 +12,7 @@ public class Task {
 	private String content;
 	private boolean end;
 
-	public Task(int QDate, int SDate, String sub, String con){
+	public void AllSet(int QDate, int SDate, String sub, String con){
 		Calendar calendar = Calendar.getInstance();
 		StringBuilder RDate1 = new StringBuilder();
 		RDate1.append(""+calendar.get(Calendar.YEAR));
